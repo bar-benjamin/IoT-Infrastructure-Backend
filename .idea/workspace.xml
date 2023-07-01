@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0e4902b3-1da8-4362-bb89-a238f6034963" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Swagger.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/IoTInfrastructureApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/IoTInfrastructureConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/config/MongoDBConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/dao/BaseDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/dao/CompanyDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/dao/IoTDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/dao/ProductDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/dao/mappers/AddressMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/dao/mappers/ContactMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/dao/mappers/PaymentInfoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/dao/mappers/SpecificationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Company.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Contact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoTData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoTUpdate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/PaymentInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Specification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/resources/CompanyResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/resources/IoTResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/resources/IoTUpdateResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/resources/ProductResource.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2Rqjb3NYaClWMkSqzCmXdegKkcv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/benjamin/Desktop/multiprotocolserver",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.mps.representations" />
+      <recent name="com.mps.dao" />
+      <recent name="com.mps.dao.mappers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.mps">
+    <configuration name="mps" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.infra.IoTInfrastructureApplication" />
+      <module name="multiprotocolserver.main" />
+      <option name="PROGRAM_PARAMETERS" value="server config.yml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.mps" />
+      <item itemvalue="HTTP Request.generated-requests | #1" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0e4902b3-1da8-4362-bb89-a238f6034963" name="Changes" comment="" />
+      <created>1687984574343</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687984574343</updated>
+      <workItem from="1687984575600" duration="13805000" />
+      <workItem from="1688073756256" duration="6784000" />
+      <workItem from="1688081091785" duration="56449000" />
+      <workItem from="1688235336107" duration="10979000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/infra/dao/mappers/ContactMapper.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

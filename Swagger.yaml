@@ -1,0 +1,481 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "IOT HTTP API"
+  description: "GIOTI - Generic Internet Of Things Infrastructure"
+host: "localhost:55556"
+basePath: "/"
+schemes:
+  - "http"
+
+definitions:
+
+  Company:
+    type: "object"
+    properties:
+      iot_command:
+        type: "string"
+      company_name:
+        type: "string"
+      user_name:
+        type: "string"
+      password:
+        type: "string"
+      address:
+        $ref: "#/definitions/Address"
+      company_contacts:
+        $ref: "#/definitions/Contacts"
+      payment_info:
+        $ref: "#/definitions/PaymentInfo"
+
+  PaymentInfo:
+    type: "object"
+    properties:
+      credit_card:
+        type: "string"
+      expiration_date:
+        type: "string"
+      cvv:
+        type: "integer"
+
+  Contacts:
+    type: "object"
+    properties:
+      contact_name:
+        type: "string"
+      contact_email:
+        type: "string"
+      contact_phone:
+        type: "string"
+      address_id:
+        type: integer
+
+  Address:
+    type: "object"
+    properties:
+      country:
+        type: "string"
+      city:
+        type: "string"
+      street:
+        type: "string"
+      postal_code:
+        type: integer
+
+
+
+  Product:
+    type: "object"
+    properties:
+      iot_command:
+        type: "string"
+      company_name:
+        type: "string"
+      product_name:
+        type: "string"
+      user_name:
+        type: "string"
+      password:
+        type: "string"
+      product_specification:
+        $ref: "#/definitions/Specs"
+
+  Specs:
+    type: "object"
+    properties:
+      product_price:
+        type: number
+        format: double
+      product_category:
+        type: "string"
+      password:
+        type: number
+        format: double
+
+  IOT:
+    type: "object"
+    properties:
+      iot_command:
+        type: "string"
+      company_name:
+        type: "string"
+      username:
+        type: "string"
+      password:
+        type: "string"
+      owner_details:
+        $ref: "#/definitions/Owner"
+      payment_info:
+        $ref: "#/definitions/PaymentInfo"
+      product_name:
+        type: "string"
+
+  Owner:
+    type: "object"
+    properties:
+      owner_name:
+        type: "string"
+      owner_email:
+        type: "string"
+      owner_phone:
+        type: "string"
+      address:
+        $ref: "#/definitions/Address"
+
+  Update:
+    type: "object"
+    properties:
+      iot_command:
+        type: "string"
+      company_name:
+        type: "string"
+      username:
+        type: "string"
+      password:
+        type: "string"
+      iot_details:
+        $ref: "#/definitions/IOTDetails"
+
+  IOTDetails:
+    type: "object"
+    properties:
+      iot_data:
+        type: "string"
+      device_serial_number:
+        type: integer
+
+  AllCompanies:
+    type: "object"
+    properties:
+      company_ID:
+        type: integer
+      company_name:
+        type: "string"
+
+  AllProducts:
+    type: "object"
+    properties:
+      product_ID:
+        type: integer
+      product_name:
+        type: "string"
+
+
+  AllIOTDevices:
+    type: "object"
+    properties:
+      iot_device_ID:
+        type: integer
+      iot_device_name:
+        type: "string"
+
+  Success:
+    example: "Success"
+
+  Error:
+    example: "Error: resource is already exist"
+
+  ServerError:
+    example: "Error: internal server error"
+
+paths:
+  /GIOTI/companies:
+    post:
+      summary: "register a new company"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "company"
+          required: true
+          schema:
+            $ref: "#/definitions/Company"
+      responses:
+        200:
+          description: "company was registered successfully"
+          schema:
+            $ref: "#/definitions/Success"
+        409:
+          description: "registration failed"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "internal server error"
+          schema:
+            $ref: "#/definitions/ServerError"
+
+    get:
+      summary: "retrieve all companies"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "all companies were retrieved successfully"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/AllCompanies"
+            example:
+              companies : [
+                {
+                  "company_id": "1",
+                  "company_name": "company1"}, {
+                  "company_id": "2",
+                  "company_name": "company2"
+                }]
+        500:
+          description: "internal server error"
+          schema:
+            $ref: "#/definitions/ServerError"
+
+  /GIOTI/companies/:id:
+    get:
+      summary: "retrieve company"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "company was retrieved successfully"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/AllCompanies"
+            example: {
+              "company_name": "company1",
+              "address":
+                {
+                  "address_id": "1",
+                  "country": "Israel",
+                  "postal_code": "10001",
+                  "city": "Tel-Aviv",
+                  "street": "Gordon"
+                },
+              "payment_info": [
+                {
+                  "credit_card": "1234567898765432",
+                  "cvv": "111",
+                  "expiration_date": "03/25",
+                  "payment_id": "1"
+                },
+                {
+                  "credit_card": "2234567898765432",
+                  "cvv": "222",
+                  "expiration_date": "04/25",
+                  "payment_id": "2"
+                }
+              ],
+              "company_contacts": [
+                {
+                  "address_id": "1",
+                  "contact_name": "Bar Bejamin",
+                  "contact_phone": "050-1112233",
+                  "contact_id": "1",
+                  "contact_email": "name@gmail.com"
+                }
+              ]
+            }
+        500:
+          description: "internal server error"
+          schema:
+            $ref: "#/definitions/ServerError"
+
+
+  /GIOTI/companies/:id/products:
+    post:
+      summary: "register a new product to a given company"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "product"
+          required: true
+          schema:
+            $ref: "#/definitions/Product"
+      responses:
+        200:
+          description: "product was registered successfully"
+          schema:
+            $ref: "#/definitions/Success"
+        409:
+          description: "registration failed"
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/ServerError"
+
+    get:
+      summary: "retrieve all products"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "all products were retrieved successfully"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/AllProducts"
+            example:
+              products : [
+                {
+                  "product_id": "1",
+                  "product_name": "product1"}, {
+                  "product_id": "2",
+                  "product_name": "product2"
+                }]
+        500:
+          description: "internal server error"
+          schema:
+            $ref: "#/definitions/ServerError"
+
+  /GIOTI/companies/:id/products/:id:
+    get:
+      summary: "retrieve company's product"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "product was retrieved successfully"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/AllProducts"
+            example: {
+              "product_id":"1",
+              "product_name":"product1",
+              "product_specification": {
+                "product_price":"0.0",
+                "product_weight":"0.0",
+                "product_category":"category1"}
+            }
+        500:
+          description: "internal server error"
+          schema:
+            $ref: "#/definitions/ServerError"
+
+
+  /GIOTI/companies/:id/products/:id/iot_devices:
+    post:
+      summary: "register a new IOT device to a given company's product"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "IOT device"
+          required: true
+          schema:
+            $ref: "#/definitions/IOT"
+      responses:
+        200:
+          description: "IOT device was registered successfully"
+          schema:
+            $ref: "#/definitions/Success"
+        500:
+          description: "internal server error"
+          schema:
+            $ref: "#/definitions/ServerError"
+
+
+    get:
+      summary: "retrieve all company's product's IOT devices"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "all company's product's IOT devices were retrieved successfully"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/AllIOTDevices"
+            example:
+              iot_devices : [
+                {"device_serial_number": "1",},
+                {"device_serial_number": "2"}]
+        500:
+          description: "internal server error"
+          schema:
+            $ref: "#/definitions/ServerError"
+
+
+
+  /GIOTI/companies/:id/products/:id/iot_devices/:id:
+    get:
+      summary: "retrieve company's product's IOT device"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "iot device retrieved successfully"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/AllCompanies"
+            example: {
+              "owner_name": "John Doe",
+              "owner_phone": "0501112233",
+              "owner_email": "name@gmail.coml",
+              "address": {
+                "country": "Israel",
+                "city": "Tel-Aviv",
+                "street": "Gordon",
+                "postal_code": 10001
+              },
+              "payment_info": {
+                "credit_card": "1234567898765432",
+                "cvv": 111,
+                "expiration_date": "01/25"
+              }
+            }
+        500:
+          description: "internal server error"
+          schema:
+            $ref: "#/definitions/ServerError"
+
+
+  /GIOTI/companies/:id/products/:id/iot_devices/:id/iot_updates:
+    post:
+      summary: "update IOT device"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "IOT device"
+          required: true
+          schema:
+            $ref: "#/definitions/Update"
+      responses:
+        200:
+          description: "IOT device was updated successfully"
+          schema:
+            $ref: "#/definitions/Success"
+        500:
+          description: "internal server error"
+          schema:
+            $ref: "#/definitions/ServerError"
+
+
+
+  /GIOTI/companies/:id/products/:id/iot_devices/:id/iot_updates/:num:
+    get:
+      summary: "retrieve most recent IOT devices that were updated"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "IOT device updates were retrieved successfully"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/AllIOTDevices"
+            example:
+              iot_updates : [
+                {"iot_data": "data1",
+                 "iot_timestamp": "2023-12-31 24:60:30"},
+                {"iot_data": "data2",
+                 "iot_timestamp": "2023-12-31 24:60:60"}
+              ]
+        500:
+          description: "internal server error"
+          schema:
+            $ref: "#/definitions/ServerError"
