@@ -4,25 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e4902b3-1da8-4362-bb89-a238f6034963" name="Changes" comment="uploaded README.md">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/health/MongoDBHealthCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/health/MySQLHealthCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/infra/IoTInfrastructureTest.java" afterDir="false" />
+    <list default="true" id="0e4902b3-1da8-4362-bb89-a238f6034963" name="Changes" comment="Implemented Testing with JUnit5(Note - Application:IoTInfrastructureApplication must be running first before running Gradle:IoTInfrastructureTest)">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/IoTInfrastructureApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/IoTInfrastructureApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/dao/CompanyDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/dao/CompanyDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Contact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoTData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoTData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoTUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoTUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/PaymentInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/PaymentInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/Specification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Specification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/resources/CompanyResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/resources/CompanyResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/resources/IoTUpdateResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/resources/IoTUpdateResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +36,24 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="multiprotocolserver" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiprotocolserver" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiprotocolserver" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiprotocolserver" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -126,7 +129,14 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.IoTInfrastructureTest">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle run_app" />
+      <command value="gradle test" />
+      <command value="gradle build" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.backend">
     <configuration name="backend" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -161,13 +171,109 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
+    <configuration name="backend [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="backend [run_app]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run_app" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="backend [run_tests]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run_tests" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="backend [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.backend" />
+      <item itemvalue="Gradle.backend [build]" />
+      <item itemvalue="Gradle.backend [run_app]" />
+      <item itemvalue="Gradle.backend [run_tests]" />
+      <item itemvalue="Gradle.backend [test]" />
       <item itemvalue="Gradle.IoTInfrastructureTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.backend [run_tests]" />
+        <item itemvalue="Gradle.backend [run_app]" />
         <item itemvalue="Gradle.IoTInfrastructureTest" />
+        <item itemvalue="Gradle.backend [test]" />
+        <item itemvalue="Gradle.backend [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +292,7 @@
       <workItem from="1688251923690" duration="221000" />
       <workItem from="1688252150091" duration="91000" />
       <workItem from="1688252266778" duration="16951000" />
-      <workItem from="1688313693406" duration="11140000" />
+      <workItem from="1688313693406" duration="18948000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented REST API for IoT infrastructure (Company, Product, IoT, and IoT update)">
       <option name="closed" value="true" />
@@ -204,7 +310,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688254709034</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Implemented Testing with JUnit5(Note - Application:IoTInfrastructureApplication must be running first before running Gradle:IoTInfrastructureTest)">
+      <option name="closed" value="true" />
+      <created>1688326246262</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1688326246262</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +338,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implemented REST API for IoT infrastructure (Company, Product, IoT, and IoT update)" />
     <MESSAGE value="uploaded README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="uploaded README.md" />
+    <MESSAGE value="Implemented Testing with JUnit5(Note - Application:IoTInfrastructureApplication must be running first before running Gradle:IoTInfrastructureTest)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Testing with JUnit5(Note - Application:IoTInfrastructureApplication must be running first before running Gradle:IoTInfrastructureTest)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
