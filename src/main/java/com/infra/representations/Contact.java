@@ -3,6 +3,7 @@ package com.infra.representations;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.Pattern;
+import java.util.Objects;
 
 public class Contact {
     @JsonProperty("contact_id")
@@ -82,5 +83,18 @@ public class Contact {
                 ", contact_phone='" + contactPhone + '\'' +
                 ", address_id=" + addressID +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Contact contact = (Contact) o;
+        return contactID == contact.contactID && addressID == contact.addressID && Objects.equals(contactName, contact.contactName) && Objects.equals(contactEmail, contact.contactEmail) && Objects.equals(contactPhone, contact.contactPhone);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(contactID, contactName, contactEmail, contactPhone, addressID);
     }
 }

@@ -4,6 +4,7 @@ package com.infra.representations;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
+import java.util.Objects;
 
 public class IoT {
     @JsonProperty("device_serial_number")
@@ -95,5 +96,18 @@ public class IoT {
                 ", address=" + address +
                 ", payments_info=" + paymentsInfo +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        IoT ioT = (IoT) o;
+        return deviceSerialNumber == ioT.deviceSerialNumber && Objects.equals(ownerName, ioT.ownerName) && Objects.equals(ownerEmail, ioT.ownerEmail) && Objects.equals(ownerPhone, ioT.ownerPhone) && Objects.equals(address, ioT.address) && Objects.equals(paymentsInfo, ioT.paymentsInfo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(deviceSerialNumber, ownerName, ownerEmail, ownerPhone, address, paymentsInfo);
     }
 }

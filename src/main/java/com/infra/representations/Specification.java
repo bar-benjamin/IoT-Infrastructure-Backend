@@ -2,6 +2,7 @@ package com.infra.representations;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.Positive;
+import java.util.Objects;
 
 public class Specification {
     @JsonProperty("specs_id")
@@ -80,5 +81,18 @@ public class Specification {
                 ", product_weight=" + productWeight +
                 ", product_id=" + productID +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Specification that = (Specification) o;
+        return specsID == that.specsID && Double.compare(that.productPrice, productPrice) == 0 && Double.compare(that.productWeight, productWeight) == 0 && productID == that.productID && Objects.equals(productCategory, that.productCategory);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(specsID, productPrice, productCategory, productWeight, productID);
     }
 }

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class IoTUpdate<T> {
     @JsonProperty
@@ -34,5 +35,18 @@ public class IoTUpdate<T> {
 
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        IoTUpdate<?> ioTUpdate = (IoTUpdate<?>) o;
+        return Objects.equals(iotData, ioTUpdate.iotData) && Objects.equals(timestamp, ioTUpdate.timestamp);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(iotData, timestamp);
     }
 }

@@ -2,6 +2,8 @@ package com.infra.representations;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Objects;
+
 public class Product {
     @JsonProperty("product_id")
     private int productID;
@@ -52,5 +54,18 @@ public class Product {
                 ", product_name='" + productName + '\'' +
                 ", product_specification=" + productSpecification +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return productID == product.productID && Objects.equals(productName, product.productName) && Objects.equals(productSpecification, product.productSpecification);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(productID, productName, productSpecification);
     }
 }

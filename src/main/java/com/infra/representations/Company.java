@@ -3,6 +3,7 @@ package com.infra.representations;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Company {
     @JsonProperty("company_name")
@@ -67,5 +68,18 @@ public class Company {
                 ", contacts=" + contacts +
                 ", payments_info=" + paymentsInfo +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Company company = (Company) o;
+        return Objects.equals(name, company.name) && Objects.equals(address, company.address) && Objects.equals(contacts, company.contacts) && Objects.equals(paymentsInfo, company.paymentsInfo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, address, contacts, paymentsInfo);
     }
 }

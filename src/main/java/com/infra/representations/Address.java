@@ -2,6 +2,8 @@ package com.infra.representations;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Objects;
+
 public class Address {
     @JsonProperty("address_id")
     private int addressID;
@@ -78,5 +80,18 @@ public class Address {
                 ", street='" + street + '\'' +
                 ", postal_code=" + postal_code +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Address address = (Address) o;
+        return addressID == address.addressID && postal_code == address.postal_code && Objects.equals(country, address.country) && Objects.equals(city, address.city) && Objects.equals(street, address.street);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(addressID, country, city, street, postal_code);
     }
 }

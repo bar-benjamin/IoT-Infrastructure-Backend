@@ -1,5 +1,7 @@
 package com.infra;
 
+import com.infra.health.MongoDBHealthCheck;
+import com.infra.health.MySQLHealthCheck;
 import com.infra.resources.CompanyResource;
 import com.infra.resources.IoTResource;
 import com.infra.resources.IoTUpdateResource;
@@ -32,6 +34,9 @@ public class IoTInfrastructureApplication extends Application<IoTInfrastructureC
         environment.jersey().register(new CompanyResource(jdbi));
         environment.jersey().register(new ProductResource(jdbi));
         environment.jersey().register(new IoTResource(jdbi));
-        environment.jersey().register(new IoTUpdateResource<>(configuration.getMongoDB()));
+        environment.jersey().register(new IoTUpdateResource(configuration.getMongoDB()));
+
+        environment.healthChecks().register("mysql", new MySQLHealthCheck(configuration.getDataSourceFactory()));
+        environment.healthChecks().register("mongodb", new MongoDBHealthCheck(configuration.getMongoDB()));
     }
 }

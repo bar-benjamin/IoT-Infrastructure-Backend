@@ -19,7 +19,7 @@ import java.util.List;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Path("/GIOTI/companies/{company_id}/products/{product_id}/iot_devices/{iot_device_id}/iot_updates")
-public class IoTUpdateResource<T> {
+public class IoTUpdateResource {
     private final MongoCollection<Document> collection;
 
     public IoTUpdateResource(MongoDBConfiguration mongoDB) {
@@ -33,7 +33,7 @@ public class IoTUpdateResource<T> {
     public Response updateIoT(@PathParam("company_id") int companyID,
                               @PathParam("product_id") int productID,
                               @PathParam("iot_device_id") int deviceSerialNumber,
-                              IoTData<T> iotData) {
+                              IoTData iotData) {
         Document document = new Document();
         document.append("iot_data", iotData.getIoTData())
                 .append("timestamp", Instant.now())

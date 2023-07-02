@@ -66,13 +66,23 @@ public class CompanyDAO extends BaseDAO {
                 .first();
     }
 
+    public void deleteCompany(String companyName) {
+        useDatabase("CompaniesManager");
+        h.createStatement("DELETE FROM Companies WHERE company_name = :company_name")
+                .bind("company_name", companyName)
+                .execute();
+        h.createStatement("DROP DATABASE :company_name")
+                .bind("company_name", companyName)
+                .execute();
+    }
+
     // helper methods
     private void createCompanyDatabase(String companyName) {
         String sqlScript;
         try {
             sqlScript = String.join("\n",
                     Files.readAllLines(
-                            Paths.get("/home/benjamin/Desktop/multiprotocolserver/company.sql")))
+                            Paths.get("company.sql")))
                     .replace("{{DB_NAME_PLACEHOLDER}}", companyName);
         } catch (IOException ex) {
             throw new RuntimeException();

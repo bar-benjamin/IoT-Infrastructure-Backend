@@ -3,6 +3,7 @@ package com.infra.representations;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.Pattern;
+import java.util.Objects;
 
 public class PaymentInfo {
     @JsonProperty("payment_id")
@@ -70,5 +71,18 @@ public class PaymentInfo {
                 ", expiration_date='" + expirationDate + '\'' +
                 ", cvv='" + cvv + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PaymentInfo that = (PaymentInfo) o;
+        return paymentID == that.paymentID && Objects.equals(creditCard, that.creditCard) && Objects.equals(expirationDate, that.expirationDate) && Objects.equals(cvv, that.cvv);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(paymentID, creditCard, expirationDate, cvv);
     }
 }

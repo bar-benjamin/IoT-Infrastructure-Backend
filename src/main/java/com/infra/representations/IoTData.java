@@ -2,22 +2,24 @@ package com.infra.representations;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class IoTData<T> {
+import java.util.Objects;
+
+public class IoTData {
     @JsonProperty("iot_data")
-    private T iotData;
+    private Object iotData;
 
     public IoTData() {
     }
 
-    public IoTData(T iotData) {
+    public IoTData(Object iotData) {
         this.iotData = iotData;
     }
 
-    public T getIoTData() {
+    public Object getIoTData() {
         return iotData;
     }
 
-    public void setIoTData(T iotData) {
+    public void setIoTData(Object iotData) {
         this.iotData = iotData;
     }
 
@@ -26,5 +28,17 @@ public class IoTData<T> {
         return "IoTData{" +
                 "iot_data=" + iotData +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        return Objects.equals(iotData, o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(iotData);
     }
 }

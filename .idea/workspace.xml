@@ -4,8 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e4902b3-1da8-4362-bb89-a238f6034963" name="Changes" comment="Implemented REST API for IoT infrastructure (Company, Product, IoT, and IoT update)">
+    <list default="true" id="0e4902b3-1da8-4362-bb89-a238f6034963" name="Changes" comment="uploaded README.md">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/health/MongoDBHealthCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/health/MySQLHealthCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/infra/IoTInfrastructureTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/IoTInfrastructureApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/IoTInfrastructureApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/dao/CompanyDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/dao/CompanyDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoTData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoTData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoTUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoTUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/PaymentInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/PaymentInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/Specification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Specification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/resources/CompanyResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/resources/CompanyResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/resources/IoTUpdateResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/resources/IoTUpdateResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,12 +37,20 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="multiprotocolserver" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiprotocolserver" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
             </expand>
             <select />
@@ -44,6 +69,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="c172501b-a45f-4cc8-b51f-f8e3b41f984c" />
+        <option name="url" value="https://github.com/bar-benjamin/IoT-Infrastructure-Backend.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2Rqjb3NYaClWMkSqzCmXdegKkcv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -52,27 +93,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/benjamin/Desktop/backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/benjamin/Desktop/backend/images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "PLAIN_TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;PLAIN_TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.mps.representations" />
@@ -80,10 +122,11 @@
       <recent name="com.mps.dao.mappers" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.backend">
+  <component name="RunManager" selected="Gradle.IoTInfrastructureTest">
     <configuration name="backend" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -94,16 +137,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
+    <configuration name="IoTInfrastructureTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.infra.IoTInfrastructureTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Application.backend" />
-      <item itemvalue="HTTP Request.generated-requests | #1" />
+      <item itemvalue="Gradle.IoTInfrastructureTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.generated-requests | #1" />
+        <item itemvalue="Gradle.IoTInfrastructureTest" />
       </list>
     </recent_temporary>
   </component>
@@ -121,7 +185,8 @@
       <workItem from="1688235336107" duration="11278000" />
       <workItem from="1688251923690" duration="221000" />
       <workItem from="1688252150091" duration="91000" />
-      <workItem from="1688252266778" duration="1917000" />
+      <workItem from="1688252266778" duration="16951000" />
+      <workItem from="1688313693406" duration="11140000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented REST API for IoT infrastructure (Company, Product, IoT, and IoT update)">
       <option name="closed" value="true" />
@@ -131,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688251766722</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="uploaded README.md">
+      <option name="closed" value="true" />
+      <created>1688254709034</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1688254709034</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,7 +223,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implemented REST API for IoT infrastructure (Company, Product, IoT, and IoT update)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented REST API for IoT infrastructure (Company, Product, IoT, and IoT update)" />
+    <MESSAGE value="uploaded README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="uploaded README.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
