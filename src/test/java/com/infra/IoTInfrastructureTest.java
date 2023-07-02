@@ -1,24 +1,25 @@
 package com.infra;
 
-import io.dropwizard.testing.junit.DropwizardAppRule;
-import org.junit.ClassRule;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import com.infra.representations.Address;
+import com.infra.representations.Company;
+import com.infra.representations.Contact;
+import com.infra.representations.PaymentInfo;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
-import com.infra.representations.*;
-import static org.junit.Assert.assertEquals;
+import io.dropwizard.testing.junit.DropwizardAppRule;
+import org.junit.BeforeClass;
+import org.junit.ClassRule;
+import org.junit.Test;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
-// TODO: Note - App must be running before running tests
+import static org.junit.Assert.assertEquals;
 
 public class IoTInfrastructureTest {
-    // RULE is used to start and stop the application during the test
+    // RULE is used to start and stop the application before and after tests
     @ClassRule
     public static final DropwizardAppRule<IoTInfrastructureConfiguration> RULE = new DropwizardAppRule<>(IoTInfrastructureApplication.class, "config.yml");
 
@@ -28,7 +29,7 @@ public class IoTInfrastructureTest {
 
     private static final String COMPANY_NAME = "BarGPT";
 
-    @BeforeAll
+    @BeforeClass
     public static void setup() {
         companyResource = Client.create().resource("http://localhost:8080/GIOTI/companies");
         company = new Company(COMPANY_NAME,
@@ -39,8 +40,8 @@ public class IoTInfrastructureTest {
 
     @Test
     public void testRegisterCompanyConflict() {
-        ClientResponse existResponse = companyResource.type(MediaType.APPLICATION_JSON)
-                .post(ClientResponse.class, company);
+        WebResource.Builder builder = companyResource.type(MediaType.APPLICATION_JSON);
+        ClientResponse existResponse = builder.post(ClientResponse.class, company);
         assertEquals(Response.Status.CONFLICT.getStatusCode(), existResponse.getStatus());
     }
 
