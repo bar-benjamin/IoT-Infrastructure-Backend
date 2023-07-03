@@ -22,17 +22,17 @@ jobs:
       - name: Install MySQL
         run: sudo apt-get update && sudo apt-get install -y mysql-server
 
-      - name: Stop MySQL service
-        run: sudo systemctl stop mysql
+      - name: Start MySQL service
+        run: sudo systemctl start mysql
 
-      - name: Start MySQL service with skip-grant-tables
-        run: sudo mysqld_safe --skip-grant-tables &
+      - name: Delay for MySQL service to start
+        run: sleep 10
 
       - name: Reset root password
         run: |
           sudo mysql -u root << EOF
           USE mysql;
-          UPDATE user SET authentication_string=PASSWORD('password') WHERE User='root';
+          ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
           FLUSH PRIVILEGES;
           exit
           EOF
