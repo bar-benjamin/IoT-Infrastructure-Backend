@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e4902b3-1da8-4362-bb89-a238f6034963" name="Changes" comment="uploaded README.md">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/health/MongoDBHealthCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/infra/health/MySQLHealthCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/infra/IoTInfrastructureTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/IoTInfrastructureApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/IoTInfrastructureApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/dao/CompanyDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/dao/CompanyDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Contact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoTData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoTData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoTUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/IoTUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/PaymentInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/PaymentInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/representations/Specification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/representations/Specification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/resources/CompanyResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/resources/CompanyResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/resources/IoTUpdateResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/resources/IoTUpdateResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +37,12 @@
                 <item name="multiprotocolserver" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiprotocolserver" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -69,11 +60,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
