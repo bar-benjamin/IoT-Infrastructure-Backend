@@ -22,26 +22,13 @@ jobs:
       - name: Install MySQL
         run: sudo apt-get update && sudo apt-get install -y mysql-server
 
-      - name: Stop MySQL service
-        run: sudo systemctl stop mysql
-
-      - name: Start MySQL service with skip-grant-tables
-        run: sudo mysqld_safe --skip-grant-tables &
+      - name: Start MySQL service
+        run: sudo systemctl start mysql
 
       - name: Reset root password
         run: |
-          sudo mysql -u root << EOF
-          USE mysql;
-          UPDATE user SET authentication_string=PASSWORD('password') WHERE User='root';
-          FLUSH PRIVILEGES;
-          exit
-          EOF
-
-      - name: Stop MySQL service
-        run: sudo systemctl stop mysql
-
-      - name: Start MySQL service
-        run: sudo systemctl start mysql
+          sudo mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';"
+          sudo mysql -u root -p"password" -e "FLUSH PRIVILEGES;"
 
       - name: Set up MySQL user and grant privileges
         run: |
@@ -53,5 +40,5 @@ jobs:
         run: chmod +x gradlew
       - run: ./gradlew wrapper --gradle-version 6.7.1
 
-      - name: Gradle build and run tests
+      - name: Gradle Build and run tests
         run: ./gradlew build
