@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e4902b3-1da8-4362-bb89-a238f6034963" name="Changes" comment="Added GitHub Actions support" />
+    <list default="true" id="0e4902b3-1da8-4362-bb89-a238f6034963" name="Changes" comment="Added GitHub Actions support">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -288,7 +291,7 @@
       <workItem from="1688251923690" duration="221000" />
       <workItem from="1688252150091" duration="91000" />
       <workItem from="1688252266778" duration="16951000" />
-      <workItem from="1688313693406" duration="20823000" />
+      <workItem from="1688313693406" duration="20481000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented REST API for IoT infrastructure (Company, Product, IoT, and IoT update)">
       <option name="closed" value="true" />
@@ -330,23 +333,7 @@
       <option name="project" value="LOCAL" />
       <updated>1688334545655</updated>
     </task>
-    <task id="LOCAL-00006" summary="Added GitHub Actions support">
-      <option name="closed" value="true" />
-      <created>1688335684543</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1688335684543</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Added GitHub Actions support">
-      <option name="closed" value="true" />
-      <created>1688335918643</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1688335918643</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
