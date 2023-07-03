@@ -71,19 +71,6 @@ public class CompanyResource {
         return Response.ok(companies).build();
     }
 
-    @DELETE
-    @Path("/{company_name}")
-    public Response deleteCompany(@PathParam("company_name") String companyName) {
-        if (!dao.isCompanyExist(companyName)) {
-            return Response.status(Response.Status.NOT_FOUND)
-                    .entity("Error: no such company in database")
-                    .build();
-        }
-
-        dao.deleteCompany(companyName);
-        return Response.ok("Success: company was deleted from database").build();
-    }
-
     // helper methods
     private Company getCompanyObject(String companyName) {
         dao.useDatabase(companyName);
