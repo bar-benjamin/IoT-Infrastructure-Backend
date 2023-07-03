@@ -28,14 +28,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-// ./gradlew run_app -> ./gradlew test in gradle tool window
-tasks.register('run_app', JavaExec) {
-    group = 'application'
-    description = 'Runs the Dropwizard App'
-
-    classpath = sourceSets.main.runtimeClasspath
-    main = 'com.infra.IoTInfrastructureApplication'
-
-    args 'server', 'config.yml'
-}
