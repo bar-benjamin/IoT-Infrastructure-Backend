@@ -7,8 +7,16 @@ jobs:
     services:
       mysql:
         image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: bar
         ports:
           - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+      mongodb:
+        image: mongo:latest
+        ports:
+          - 27017:27017
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -19,21 +27,16 @@ jobs:
           java-version: 8
           distribution: adopt
 
-      - name: Install MySQL
-        run: sudo apt-get update && sudo apt-get install -y mysql-server
-
-      - name: Start MySQL service
-        run: sudo systemctl start mysql
-
-      - name: Set up MySQL user and grant privileges
-        run: |
-          sudo mysql -u root -e "CREATE USER 'bar'@'localhost' IDENTIFIED BY 'password';"
-          sudo mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'bar'@'localhost';"
-          sudo mysql -u root -e "FLUSH PRIVILEGES;"
-
       - name: Set up Gradle
         run: chmod +x gradlew
       - run: ./gradlew wrapper --gradle-version 6.7.1
 
       - name: Gradle Build and run tests
-        run: ./gradlew build
+        run: |
+          ./gradlew build \
+          -Pdatabase.url=jdbc:mysql://localhost:3306 \
+          -Pdatabase.user=bar \
+          -Pdatabase.password=password \
+          -Pmongodb.mongoURI=mongodb://localhost:27017 \
+          -Pmongodb.databaseName=iot_platform \
+          -Pmongodb.collectionName=iot_updates
