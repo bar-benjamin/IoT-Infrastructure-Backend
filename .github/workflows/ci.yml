@@ -25,11 +25,6 @@ jobs:
       - name: Start MySQL service
         run: sudo systemctl start mysql
 
-      - name: Reset root password
-        run: |
-          sudo mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';"
-          sudo mysql -u root -p"password" -e "FLUSH PRIVILEGES;"
-
       - name: Set up MySQL user and grant privileges
         run: |
           sudo mysql -u root -p"password" -e "CREATE USER 'bar'@'localhost' IDENTIFIED BY 'password';"
@@ -40,5 +35,5 @@ jobs:
         run: chmod +x gradlew
       - run: ./gradlew wrapper --gradle-version 6.7.1
 
-      - name: Gradle Build and run tests
+      - name: Gradle build and run tests
         run: ./gradlew build
