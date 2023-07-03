@@ -10,7 +10,6 @@ import com.sun.jersey.api.client.WebResource;
 import io.dropwizard.testing.junit.DropwizardAppRule;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
 
 import javax.ws.rs.core.MediaType;
@@ -30,9 +29,6 @@ public class IoTInfrastructureTest {
 
     private static final String COMPANY_NAME = "BarGPT";
 
-    private static final int COMPANY_ID = 1;
-
-
     @BeforeClass
     public static void setup() {
         companyResource = Client.create().resource("http://localhost:8080/GIOTI/companies");
@@ -40,18 +36,19 @@ public class IoTInfrastructureTest {
                 new Address(1, "Israel", "Tel-Aviv", "Gordon", 630105),
                 new ArrayList<>(Arrays.asList(new Contact(1, "bar corporation", "BarGPT@gmail.com", "055-1112233", 1))),
                 new ArrayList<>(Arrays.asList(new PaymentInfo(1, "5326458012345678", "03/25", "111"))));
-        companyResource.type(MediaType.APPLICATION_JSON).post(ClientResponse.class, company);
     }
 
     @Test
     public void testRegisterCompanyConflict() {
-        ClientResponse response = companyResource.type(MediaType.APPLICATION_JSON).post(ClientResponse.class, company);
-        assertEquals(Response.Status.CONFLICT.getStatusCode(), response.getStatus());
+        WebResource.Builder builder = companyResource.type(MediaType.APPLICATION_JSON);
+        ClientResponse existResponse = builder.post(ClientResponse.class, company);
+        assertEquals(Response.Status.CONFLICT.getStatusCode(), existResponse.getStatus());
     }
 
     @Test
     public void testGetCompany() {
-        ClientResponse response = companyResource.path(String.valueOf(COMPANY_ID))
+        int companyId = 1;
+        ClientResponse response = companyResource.path(String.valueOf(companyId))
                 .accept(MediaType.APPLICATION_JSON)
                 .get(ClientResponse.class);
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
