@@ -28,3 +28,13 @@ dependencies {
 test {
     useJUnit() // JUnit4
 }
+
+tasks.register('run', JavaExec) {
+    group = 'application'
+    description = 'Runs the Dropwizard App'
+
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'com.infra.IoTInfrastructureApplication'
+
+    args 'server', 'config.yml'
+}
