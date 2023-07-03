@@ -32,11 +32,4 @@ jobs:
       - run: ./gradlew wrapper --gradle-version 6.7.1
 
       - name: Gradle Build and run tests
-        run: |
-          ./gradlew build \
-          -Pdatabase.url=jdbc:mysql://localhost:3306 \
-          -Pdatabase.user=bar \
-          -Pdatabase.password=password \
-          -Pmongodb.mongoURI=mongodb://localhost:27017 \
-          -Pmongodb.databaseName=iot_platform \
-          -Pmongodb.collectionName=iot_updates
+        run: ./gradlew build
