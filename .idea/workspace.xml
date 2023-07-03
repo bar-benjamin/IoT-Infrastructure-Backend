@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0e4902b3-1da8-4362-bb89-a238f6034963" name="Changes" comment="Added GitHub Actions support">
       <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/infra/IoTInfrastructureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/infra/IoTInfrastructureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +134,7 @@
       <command value="gradle build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.backend [test]">
+  <component name="RunManager" selected="Application.backend">
     <configuration name="backend" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -194,6 +191,50 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
+    <configuration name="backend [run_app]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run_app" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="backend [run_tests]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run_tests" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
     <configuration name="backend [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -218,15 +259,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.backend" />
-      <item itemvalue="Gradle.IoTInfrastructureTest" />
       <item itemvalue="Gradle.backend [build]" />
+      <item itemvalue="Gradle.backend [run_app]" />
+      <item itemvalue="Gradle.backend [run_tests]" />
       <item itemvalue="Gradle.backend [test]" />
+      <item itemvalue="Gradle.IoTInfrastructureTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.backend [run_tests]" />
+        <item itemvalue="Gradle.backend [run_app]" />
+        <item itemvalue="Gradle.IoTInfrastructureTest" />
         <item itemvalue="Gradle.backend [test]" />
         <item itemvalue="Gradle.backend [build]" />
-        <item itemvalue="Gradle.IoTInfrastructureTest" />
       </list>
     </recent_temporary>
   </component>
@@ -245,7 +290,7 @@
       <workItem from="1688251923690" duration="221000" />
       <workItem from="1688252150091" duration="91000" />
       <workItem from="1688252266778" duration="16951000" />
-      <workItem from="1688313693406" duration="24259000" />
+      <workItem from="1688313693406" duration="21133000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented REST API for IoT infrastructure (Company, Product, IoT, and IoT update)">
       <option name="closed" value="true" />
@@ -311,15 +356,7 @@
       <option name="project" value="LOCAL" />
       <updated>1688336053500</updated>
     </task>
-    <task id="LOCAL-00009" summary="Added GitHub Actions support">
-      <option name="closed" value="true" />
-      <created>1688336509744</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1688336509744</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,19 +367,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>

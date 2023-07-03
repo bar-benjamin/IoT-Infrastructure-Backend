@@ -31,5 +31,16 @@ jobs:
         run: chmod +x gradlew
       - run: ./gradlew wrapper --gradle-version 6.7.1
 
+      - name: Run Dropwizard Application
+        id: dropwizard
+        run: ./gradlew run & export DROPWIZARD_PID=$!
+
+      - name: Wait for Dropwizard to be ready
+        run: sleep 60
+
       - name: Gradle Build and run tests
         run: ./gradlew build
+
+      - name: Kill background pid
+        run: |
+          pkill -P $DROPWIZARD_PID

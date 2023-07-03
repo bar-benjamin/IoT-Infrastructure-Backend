@@ -20,11 +20,22 @@ dependencies {
     implementation 'javax.xml.bind:jaxb-api:2.4.0-b180830.0359'
     implementation 'org.hibernate.validator:hibernate-validator:8.0.0.Final'
     implementation 'org.hamcrest:hamcrest-all:1.3'
+    implementation 'io.dropwizard:dropwizard-testing:0.7.0'
     implementation 'org.mongodb:mongodb-driver-sync:4.9.0'
-    testImplementation 'io.dropwizard:dropwizard-testing:0.7.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
 }
 
 test {
-    useJUnit() // JUnit4
+    useJUnitPlatform()
+}
+
+// ./gradlew run_app -> ./gradlew test in gradle tool window
+tasks.register('run_app', JavaExec) {
+    group = 'application'
+    description = 'Runs the Dropwizard App'
+
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'com.infra.IoTInfrastructureApplication'
+
+    args 'server', 'config.yml'
 }
