@@ -36,7 +36,7 @@ jobs:
         run: ./gradlew run & export DROPWIZARD_PID=$!
 
       - name: Wait for Dropwizard to be ready
-        run: sleep 10
+        run: sleep 5
 
       - name: Gradle Build and run tests
         run: ./gradlew build
