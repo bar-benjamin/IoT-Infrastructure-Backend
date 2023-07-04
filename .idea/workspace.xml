@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e4902b3-1da8-4362-bb89-a238f6034963" name="Changes" comment="Added Watchdog feature to monitor infrastructure">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infra/IoTInfrastructureApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infra/IoTInfrastructureApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/infra/IoTInfrastructureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/infra/IoTInfrastructureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +124,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/infra/dao" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.backend">
+  <component name="RunManager" selected="Gradle.IoTInfrastructureTest">
     <configuration name="backend" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -132,6 +134,50 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="IoT-Infrastructure-Backend [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="IoT-Infrastructure-Backend [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
     </configuration>
     <configuration name="IoTInfrastructureTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -159,11 +205,15 @@
     </configuration>
     <list>
       <item itemvalue="Application.backend" />
+      <item itemvalue="Gradle.IoT-Infrastructure-Backend [build]" />
+      <item itemvalue="Gradle.IoT-Infrastructure-Backend [clean]" />
       <item itemvalue="Gradle.IoTInfrastructureTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.IoTInfrastructureTest" />
+        <item itemvalue="Gradle.IoT-Infrastructure-Backend [build]" />
+        <item itemvalue="Gradle.IoT-Infrastructure-Backend [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +234,7 @@
       <workItem from="1688252266778" duration="16951000" />
       <workItem from="1688313693406" duration="11140000" />
       <workItem from="1688425286981" duration="6708000" />
-      <workItem from="1688432519103" duration="5231000" />
+      <workItem from="1688432519103" duration="8546000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented REST API for IoT infrastructure (Company, Product, IoT, and IoT update)">
       <option name="closed" value="true" />
@@ -218,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688437480796</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added Watchdog feature to monitor infrastructure">
+      <option name="closed" value="true" />
+      <created>1688437773475</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1688437773475</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
