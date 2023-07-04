@@ -6,6 +6,7 @@ import com.infra.resources.CompanyResource;
 import com.infra.resources.IoTResource;
 import com.infra.resources.IoTUpdateResource;
 import com.infra.resources.ProductResource;
+import com.infra.wd.WatchdogThread;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
