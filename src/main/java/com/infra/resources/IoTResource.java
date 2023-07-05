@@ -12,7 +12,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Produces(MediaType.APPLICATION_JSON)
-@Path("/GIOTI/companies/{company_id}/products/{product_id}/iot_devices")
+@Path("/GIOTI/companies/{company_name}/products/{product_name}/iot_devices")
 public class IoTResource {
     private final IoTDAO dao;
 
@@ -23,11 +23,9 @@ public class IoTResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response registerIoT(@PathParam("company_id") int companyID,
-                                @PathParam("product_id") int productID,
+    public Response registerIoT(@PathParam("company_name") String companyName,
+                                @PathParam("product_name") String productName,
                                 IoT iot) {
-        String companyName = dao.getCompanyNameByID(companyID);
-
         if (!dao.isCompanyExist(companyName)) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("Error: no such company in database")
@@ -35,23 +33,22 @@ public class IoTResource {
         }
 
         dao.useDatabase(companyName);
-        if (!dao.isProductExist(dao.getProductNameByID(productID))) {
+        if (!dao.isProductExist(productName)) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("Error: no such product in database")
                     .build();
         }
 
+        int productID = dao.getProductIDByName(productName);
         dao.registerIOT(iot, productID);
         return Response.status(Response.Status.CREATED).entity("Success: IoT was registered in database").build();
     }
 
     @GET
     @Path("/{iot_device_id}")
-    public Response getIoT(@PathParam("company_id") int companyID,
-                           @PathParam("product_id") int productID,
+    public Response getIoT(@PathParam("company_name") String companyName,
+                           @PathParam("product_name") String productName,
                            @PathParam("iot_device_id") int deviceSerialNumber) {
-        String companyName = dao.getCompanyNameByID(companyID);
-
         if (!dao.isCompanyExist(companyName)) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("Error: no such company in database")
@@ -59,7 +56,7 @@ public class IoTResource {
         }
 
         dao.useDatabase(companyName);
-        if (!dao.isProductExist(dao.getProductNameByID(productID))) {
+        if (!dao.isProductExist(productName)) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("Error: no such product in database")
                     .build();
@@ -76,22 +73,22 @@ public class IoTResource {
     }
 
     @GET
-    public Response getIoTs(@PathParam("company_id") int companyID,
-                            @PathParam("product_id") int productID) {
-        String companyName = dao.getCompanyNameByID(companyID);
-        if (companyName == null) {
+    public Response getIoTs(@PathParam("company_name") String companyName,
+                            @PathParam("product_name") String productName) {
+        if (!dao.isCompanyExist(companyName)) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("Error: no such company in database")
                     .build();
         }
 
         dao.useDatabase(companyName);
-        if (!dao.isProductExist(dao.getProductNameByID(productID))) {
+        if (!dao.isProductExist(productName)) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("Error: no such product in database")
                     .build();
         }
 
+        int productID = dao.getProductIDByName(productName);
         List<String> iots = dao.getIoTs(productID);
         return Response.ok(iots).build();
     }

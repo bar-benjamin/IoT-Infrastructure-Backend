@@ -39,14 +39,6 @@ public abstract class BaseDAO {
                 .first() != null;
     }
 
-    public String getCompanyNameByID(int companyID) {
-        useDatabase("CompaniesManager");
-        return h.createQuery("SELECT company_name FROM Companies WHERE company_id = :company_id")
-                .bind("company_id", companyID)
-                .mapTo(String.class) // mapTo works on built-in java types
-                .first();
-    }
-
     public String getProductNameByID(int productID) {
         return h.createQuery("SELECT product_name FROM Products WHERE product_id = :product_id")
                 .bind("product_id", productID)

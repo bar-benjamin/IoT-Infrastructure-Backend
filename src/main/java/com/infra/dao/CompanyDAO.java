@@ -10,7 +10,9 @@ import com.infra.representations.PaymentInfo;
 import org.skife.jdbi.v2.Handle;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
@@ -70,16 +72,15 @@ public class CompanyDAO extends BaseDAO {
     private void createCompanyDatabase(String companyName) {
         String sqlScript;
         try {
-            sqlScript = String.join("\n",
-                    Files.readAllLines(
-                            Paths.get("company.sql")))
-                    .replace("{{DB_NAME_PLACEHOLDER}}", companyName);
+            Path filePath = Paths.get("company.sql");
+            List<String> lines = Files.readAllLines(filePath, StandardCharsets.UTF_8);
+            String fileContents = String.join("\n", lines);
+            sqlScript = fileContents.replace("{{DB_NAME_PLACEHOLDER}}", companyName);
         } catch (IOException ex) {
             throw new RuntimeException();
         }
 
-        h.createScript(sqlScript)
-                .execute();
+        h.createScript(sqlScript).execute();
     }
 
     private void saveCompanyInManager(String companyName) {

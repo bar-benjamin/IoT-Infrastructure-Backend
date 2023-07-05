@@ -38,10 +38,8 @@ public class CompanyResource {
     }
 
     @GET
-    @Path("/{company_id}")
-    public Response getCompany(@PathParam("company_id") int companyID) {
-        String companyName = dao.getCompanyNameByID(companyID);
-
+    @Path("/{company_name}")
+    public Response getCompany(@PathParam("company_name") String companyName) {
         if (!dao.isCompanyExist(companyName)) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("Error: no such company in database")

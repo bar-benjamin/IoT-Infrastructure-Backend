@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Produces(MediaType.APPLICATION_JSON)
-@Path("/GIOTI/companies/{company_id}/products")
+@Path("/GIOTI/companies/{company_name}/products")
 public class ProductResource {
     private final ProductDAO dao;
 
@@ -22,8 +22,7 @@ public class ProductResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response registerProduct(@PathParam("company_id") int companyID, Product product) {
-        String companyName = dao.getCompanyNameByID(companyID);
+    public Response registerProduct(@PathParam("company_name") String companyName, Product product) {
         if (!dao.isCompanyExist(companyName)) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("Error: no such company in database")
@@ -42,10 +41,9 @@ public class ProductResource {
     }
 
     @GET
-    @Path("/{product_id}")
-    public Response getProduct(@PathParam("company_id") int companyID, @PathParam("product_id") int productID) {
-        String companyName = dao.getCompanyNameByID(companyID);
-
+    @Path("/{product_name}")
+    public Response getProduct(@PathParam("company_name") String companyName,
+                               @PathParam("product_name") String productName) {
         if (!dao.isCompanyExist(companyName)) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("Error: no such company in database")
@@ -53,20 +51,20 @@ public class ProductResource {
         }
 
         dao.useDatabase(companyName);
-        if (!dao.isProductExist(dao.getProductNameByID(productID))) {
+        if (!dao.isProductExist(productName)) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("Error: no such product in database")
                     .build();
         }
 
+        int productID = dao.getProductIDByName(productName);
         Product product = getProductObject(companyName, productID);
         return Response.ok(product).build();
     }
 
     @GET
-    public Response getProducts(@PathParam("company_id") int companyID) {
-        String companyName = dao.getCompanyNameByID(companyID);
-        if (companyName == null) {
+    public Response getProducts(@PathParam("company_name") String companyName) {
+        if (!dao.isCompanyExist(companyName)) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("Error: no such company in database")
                     .build();

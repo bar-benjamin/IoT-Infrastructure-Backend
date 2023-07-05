@@ -46,4 +46,11 @@ public class ProductDAO extends BaseDAO {
                 .mapTo(Integer.class)
                 .list();
     }
+
+    public int getProductIDByName(String productName) {
+        return h.createQuery("SELECT product_id FROM Products WHERE product_name = :product_name")
+                .bind("product_name", productName)
+                .mapTo(Integer.class)
+                .first();
+    }
 }

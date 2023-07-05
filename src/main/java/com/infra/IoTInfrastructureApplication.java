@@ -1,5 +1,6 @@
 package com.infra;
 
+import com.infra.filters.CORSFilter;
 import com.infra.health.MongoDBHealthCheck;
 import com.infra.health.MySQLHealthCheck;
 import com.infra.resources.CompanyResource;
@@ -13,6 +14,10 @@ import io.dropwizard.jdbi.DBIFactory;
 import org.skife.jdbi.v2.DBI;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.servlet.DispatcherType;
+import javax.servlet.FilterRegistration;
+import java.util.EnumSet;
 
 public class IoTInfrastructureApplication extends Application<IoTInfrastructureConfiguration> {
     private static final Logger LOGGER = LoggerFactory.getLogger(IoTInfrastructureApplication.class);
@@ -38,5 +43,10 @@ public class IoTInfrastructureApplication extends Application<IoTInfrastructureC
 
         environment.healthChecks().register("mysql", new MySQLHealthCheck(configuration.getDataSourceFactory()));
         environment.healthChecks().register("mongodb", new MongoDBHealthCheck(configuration.getMongoDB()));
+
+        // Register CORS filter
+        FilterRegistration.Dynamic corsFilter = environment.servlets()
+                .addFilter("CORSFilter", new CORSFilter());
+        corsFilter.addMappingForUrlPatterns(EnumSet.allOf(DispatcherType.class), true, "/*");
     }
 }

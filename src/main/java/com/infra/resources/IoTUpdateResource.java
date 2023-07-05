@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Produces(MediaType.APPLICATION_JSON)
-@Path("/GIOTI/companies/{company_id}/products/{product_id}/iot_devices/{iot_device_id}/iot_updates")
+@Path("/GIOTI/companies/{company_name}/products/{product_name}/iot_devices/{iot_device_id}/iot_updates")
 public class IoTUpdateResource {
     private final MongoCollection<Document> collection;
 
@@ -30,15 +30,15 @@ public class IoTUpdateResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateIoT(@PathParam("company_id") int companyID,
-                              @PathParam("product_id") int productID,
+    public Response updateIoT(@PathParam("company_name") String companyName,
+                              @PathParam("product_name") String productName,
                               @PathParam("iot_device_id") int deviceSerialNumber,
                               IoTData iotData) {
         Document document = new Document();
         document.append("iot_data", iotData.getIoTData())
                 .append("timestamp", Instant.now())
-                .append("company_id", companyID)
-                .append("product_id", productID)
+                .append("company_name", companyName)
+                .append("product_name", productName)
                 .append("deviceSerialNumber", deviceSerialNumber);
 
         collection.insertOne(document);
@@ -48,8 +48,8 @@ public class IoTUpdateResource {
 
     @GET
     @Path("/{num_of_updates}")
-    public Response getIoTUpdates(@PathParam("company_id") int companyID,
-                                  @PathParam("product_id") int productID,
+    public Response getIoTUpdates(@PathParam("company_name") String companyName,
+                                  @PathParam("product_name") String productName,
                                   @PathParam("iot_device_id") int deviceSerialNumber,
                                   @PathParam("num_of_updates") int numOfUpdates) {
         List<Document> updates = collection.find()

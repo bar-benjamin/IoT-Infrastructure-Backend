@@ -2,15 +2,15 @@
 
 ### UI
 
-<!--  ![ui](./images/ui.gif) -->
+![preview](./images/preview.gif)
 
 ### UML
 
-<!-- ![uml](./images/uml.png) -->
+![uml_diagram](./images/uml_diagram.png)
 
 ### SQL Database
 
 ![sql](./images/sql.png)
 
 ### Swagger API
-![swagger](./images/swagger.png)
+![swag](./images/swag.png)

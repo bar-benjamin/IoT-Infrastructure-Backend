@@ -228,7 +228,7 @@ paths:
           schema:
             $ref: "#/definitions/ServerError"
 
-  /GIOTI/companies/:id:
+  /GIOTI/companies/:company_name:
     get:
       summary: "retrieve company"
       produces:
@@ -280,7 +280,7 @@ paths:
             $ref: "#/definitions/ServerError"
 
 
-  /GIOTI/companies/:id/products:
+  /GIOTI/companies/:company_name/products:
     post:
       summary: "register a new product to a given company"
       produces:
@@ -329,7 +329,7 @@ paths:
           schema:
             $ref: "#/definitions/ServerError"
 
-  /GIOTI/companies/:id/products/:id:
+  /GIOTI/companies/:company_name/products/:product_name:
     get:
       summary: "retrieve company's product"
       produces:
@@ -355,7 +355,7 @@ paths:
             $ref: "#/definitions/ServerError"
 
 
-  /GIOTI/companies/:id/products/:id/iot_devices:
+  /GIOTI/companies/:company_name/products/:product_name/iot_devices:
     post:
       summary: "register a new IOT device to a given company's product"
       produces:
@@ -399,7 +399,7 @@ paths:
 
 
 
-  /GIOTI/companies/:id/products/:id/iot_devices/:id:
+  /GIOTI/companies/:company_name/products/:product_name/iot_devices/:iot_device_id:
     get:
       summary: "retrieve company's product's IOT device"
       produces:
@@ -433,7 +433,7 @@ paths:
             $ref: "#/definitions/ServerError"
 
 
-  /GIOTI/companies/:id/products/:id/iot_devices/:id/iot_updates:
+  /GIOTI/companies/:company_name/products/:product_name/iot_devices/:iot_device_id/iot_updates:
     post:
       summary: "update IOT device"
       produces:
@@ -456,7 +456,7 @@ paths:
 
 
 
-  /GIOTI/companies/:id/products/:id/iot_devices/:id/iot_updates/:num:
+  /GIOTI/companies/:company_name/products/:product_name/iot_devices/:iot_device_id/iot_updates/:num:
     get:
       summary: "retrieve most recent IOT devices that were updated"
       produces:
