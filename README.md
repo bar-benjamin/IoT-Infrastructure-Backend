@@ -42,6 +42,11 @@ To set up the project locally, follow these steps:
 3. Build the project using `./gradlew build`
 4. Run the project using `./gradlew run` or via IDE configurations with `server config.yml` program arguments
 
+#### Running with Docker
+
+1. Build the Docker image using `docker build -t iot_infrastructure .`
+2. Run a Docker container based on the image built using `docker run -p 8080:8080 iot_infrastructure`
+
 Once the application is running, you can access the RESTful endpoints by navigating to `http://localhost:8080` in your web browser or using tools like cURL or Postman.
 
 ### 2. Project Structure
@@ -65,4 +70,5 @@ The project structure follows a standard Gradle directory layout:
 │       └── resources
 └── README.md  
 └── config.yml       
+└── Dockerfile       
 ```
