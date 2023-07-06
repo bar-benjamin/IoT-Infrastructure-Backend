@@ -22,6 +22,8 @@
 
 ### 0. Overview
 
+Developed an end-to-end multithreaded infrastructure system for companies to efficiently manage their product and IoT data via REST API. Implemented backend using Dropwizard framework(Java and Gradle) and frontend with Django framework(Python). Utilized MySQL and MongoDB for data storage, implemented a robust monitoring system for automatic restart watchdog process in case of a crash and added Notification microservice with RabbitMQ for logging support. Followed SOLID principles and test-driven development practices while making use of Git for version control and GitHub Actions for CI/CD. Lastly, containerized application using Docker ensuring isolated environment.
+
 Project was built with Dropwizard which straddles the line between being a library and a framework. Its goal is to provide performant, reliable implementations of everything a production-ready stateless RESTful APIs
 
 1. `Jetty` - dropwizard projects have a `main` method which spins up an HTTP web-server
