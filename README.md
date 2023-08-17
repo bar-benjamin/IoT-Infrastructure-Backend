@@ -41,8 +41,10 @@ To set up the project locally, follow these steps:
 
 1. Clone the repository to your local machine.
 2. Make sure you have JDK installed.
-3. Build the project using `./gradlew build`
-4. Run the project using `./gradlew run` or via IDE configurations with `server config.yml` program arguments
+3. Setup databases: (1) sudo mysql -u bar -p; , (2) sudo systemctl start mongod; -> mongosh;
+4. Run NotificationMicroservice
+5. Build and Run the project using `./gradlew build` and `./gradlew run` or via IDE configurations with `server config.yml` program arguments
+6. Use Postman for GET/Post requests or navigate to `http://localhost:8000` in your web browser
 
 #### Running with Docker
 
