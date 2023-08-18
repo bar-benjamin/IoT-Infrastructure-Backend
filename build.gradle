@@ -42,3 +42,11 @@ tasks.register('run', JavaExec) {
 
     args 'server', 'config.yml'
 }
+
+tasks.register('run_notification_ms', JavaExec) {
+    group = 'application'
+    description = 'Runs the Dropwizard App'
+
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'com.infra.microservices.NotificationMicroservice'
+}
