@@ -4,6 +4,10 @@
 
 ![preview](./images/preview.gif)
 
+### Architecture
+
+![architecture](./images/architecture.png)
+
 ### UML
 
 ![uml_diagram](./images/uml_diagram.png)
